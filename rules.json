@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": { "transform": { "path": "/inbox" } }
+    },
+    "condition": {
+      "regexFilter": "^https://(?:www\\.)?substack\\.com/?(?:\\?.*)?$",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": { "transform": { "path": "/inbox" } }
+    },
+    "condition": {
+      "regexFilter": "^https://(?:www\\.)?substack\\.com/home/?(?:\\?.*)?$",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]

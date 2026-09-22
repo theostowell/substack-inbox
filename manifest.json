@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Substack Inbox",
+  "version": "1.2.1",
+  "description": "Open substack.com at /inbox, hide Home, hide Related notes, and stay off Home after publishing a note.",
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": [
+    "https://substack.com/*",
+    "https://www.substack.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "substack_inbox_redirect",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://substack.com/*",
+        "https://www.substack.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["hide-home.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["page.js"],
+      "matches": [
+        "https://substack.com/*",
+        "https://www.substack.com/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+/* Home nav item in the left sidebar — not the Substack logo. */
+nav[aria-label="Main navigation"] a[aria-label="Home"] {
+  display: none !important;
+}
+
+a[aria-label="Home"][href="/"],
+a[aria-label="Home"][href="/home"],
+a[aria-label="Home"][href="https://substack.com/"],
+a[aria-label="Home"][href="https://substack.com/home"],
+a[aria-label="Home"][href="https://www.substack.com/"],
+a[aria-label="Home"][href="https://www.substack.com/home"] {
+  display: none !important;
+}
+
+/* Whole "Related notes" block under a note (heading + cards). */
+[data-substack-inbox="related-notes"] {
+  display: none !important;
+}
